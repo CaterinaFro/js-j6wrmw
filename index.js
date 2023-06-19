@@ -67,8 +67,7 @@ class Archivio {
 
   cercaLibri(stringa) {
     //libri.forEach((libro,i)=> console.log(libro.includes(stringa)))
-    //const l = libri.map((libro,i)=> (libro.includes(stringa)))
-    //console.log(l)
+    //const l = libri.map((libro,i)=> (libro.includes(stringa))) --> console.log(l)
     
     let x = libri.filter((libro) => {
       return libro.includes(stringa);

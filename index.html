@@ -1,1 +1,45 @@
 <div id="app"></div>
+<input type="text" id="searchInput" placeholder="Inserisci la tua ricerca">
+  <!--<button onclick="search()">Cerca</button>-->
+
+  <ul id="searchResults"></ul>
+  <script>
+  const myArray = [
+  'Harry Potter e la Pietra Filosofale',
+  'io sono malala',
+  'la storia di iqbal',
+  'qualcuno con cui correre',
+  'un uomo'
+];
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+
+  searchInput.addEventListener('input', () => {
+    const searchValue = searchInput.value.toLowerCase();
+
+    const filteredArray = myArray.filter((item) => {
+      return item.toLowerCase().includes(searchValue);
+    });
+
+    displayResults(filteredArray);
+  });
+
+  function displayResults(results) {
+    
+    searchResults.innerHTML = '';
+
+    if (results.length === 0) {
+      const noResults = document.createElement('li');
+      noResults.textContent = 'Nessun risultato trovato.';
+      searchResults.appendChild(noResults);
+    } else {
+      for (const result of results) {
+        const li = document.createElement('li');
+        li.textContent = result;
+        searchResults.appendChild(li);
+      }
+    }
+  }
+</script>
+</body>
+</html>
