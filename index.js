@@ -66,10 +66,14 @@ class Archivio {
   }
 
   cercaLibri(stringa) {
-    let x = libri.filter(function(libro) {
+    //libri.forEach((libro,i)=> console.log(libro.includes(stringa)))
+    //const l = libri.map((libro,i)=> (libro.includes(stringa)))
+    //console.log(l)
+    
+    let x = libri.filter((libro) => {
       return libro.includes(stringa);
-    });
-    return x
+      });
+      return x
   }
 }
 
@@ -83,7 +87,7 @@ const libri = [
 ];
 
 const archivio = new Archivio(libri);
-const libriCorrispondenti = archivio.cercaLibri('Potter');
+const libriCorrispondenti = archivio.cercaLibri('u');
 
 console.log(libriCorrispondenti);
 
