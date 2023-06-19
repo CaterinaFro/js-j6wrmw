@@ -23,7 +23,7 @@ return a.concat(t).toLowerCase().includes(c.toLowerCase())
 console.log(ricercarrow(autore,titolo,chiave));
 */
 //es2
-
+/*es1
 let archivio = [
   {autore: "bobo",
   titolo: "badalà"
@@ -58,6 +58,35 @@ function risultato(ar,t) {
     return "non ci sono risultati"
 }
 console.log(risultato(archivio,tito))
+*/
+
+class Archivio {
+  constructor(libri) {
+    this.libri = libri;
+  }
+
+  cercaLibri(stringa) {
+    let x = libri.filter(function(libro) {
+      return libro.includes(stringa);
+    });
+    return x
+  }
+}
+
+
+const libri = [
+  'Harry Potter e la Pietra Filosofale',
+  '1984',
+  'boris',
+  'gustavino',
+  'un uomo'
+];
+
+const archivio = new Archivio(libri);
+const libriCorrispondenti = archivio.cercaLibri('Potter');
+
+console.log(libriCorrispondenti);
+
 
 
 
